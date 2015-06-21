@@ -1,0 +1,6 @@
+[submodule "prezto"]
+	path = prezto
+	url = git://github.com/ijks/prezto.git
+[submodule "zsh/prezto"]
+	path = zsh/prezto
+	url = git://github.com/ijks/prezto.git
