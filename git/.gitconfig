@@ -1,0 +1,22 @@
+[user]
+	name = Daan Rijks
+	email = daanrijks@gmail.com
+[core]
+	autocrlf = input
+	safecrlf = true
+[alias]
+    co = checkout
+    ci = commit
+    cm = commit -m
+    st = status
+    ap = add -p
+    br = branch
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+
+    mkbr = checkout -b
+[credential]
+	helper = cache
+[push]
+	default = simple
