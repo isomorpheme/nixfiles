@@ -84,6 +84,7 @@ syntax enable
 " GENERAL SETTINGS
 
 set history=10000
+set hidden
 
 " don't put temporary junk in my working directory! >:(
 set backupdir=~/.vim/backup//
