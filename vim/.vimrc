@@ -45,18 +45,15 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_error_symbol = '▞'
+"let g:syntastic_error_symbol = '▞'
 "let g:syntastic_style_error_symbol = '
 
-" powerline
-let g:airline_powerline_fonts = 1 " enable powerline symbols
+" airline
 set laststatus=2 " prevents only showing when split
-autocmd vimenter * AirlineTheme base16
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
+"autocmd vimenter * AirlineTheme base16
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 
 " Nerdtree
 "autocmd vimenter * NERDTree
@@ -69,7 +66,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 " END PLUGIN SETTINGS
 
 set background=dark
-colorscheme base16-flat
+colorscheme solarized
 let base16colorspace=256
 
 "autocmd ColorScheme * highlight Cursor gui=reverse guibg=NONE guifg=NONE
@@ -134,7 +131,7 @@ set foldmethod=indent
 nnoremap j gj
 nnoremap k gk
 
-" rebind begin/end of line. i mean srsly, $ and ^???
+" rebind begin/end of line.
 nnoremap B ^
 nnoremap E $
 nnoremap $ <nop>
