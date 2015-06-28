@@ -1,1 +1,1 @@
-/home/ijks/dotfiles/zsh/prezto/runcoms/zshrc
+prezto/runcoms/zshrc

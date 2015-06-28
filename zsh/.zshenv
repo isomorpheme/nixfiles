@@ -1,1 +1,1 @@
-/home/ijks/dotfiles/zsh/prezto/runcoms/zshenv
+prezto/runcoms/zshenv

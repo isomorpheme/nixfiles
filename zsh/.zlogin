@@ -1,1 +1,1 @@
-/home/ijks/dotfiles/zsh/prezto/runcoms/zlogin
+prezto/runcoms/zlogin

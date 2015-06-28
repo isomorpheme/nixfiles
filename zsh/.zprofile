@@ -1,1 +1,1 @@
-/home/ijks/dotfiles/zsh/prezto/runcoms/zprofile
+prezto/runcoms/zprofile

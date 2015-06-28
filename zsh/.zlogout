@@ -1,1 +1,1 @@
-/home/ijks/dotfiles/zsh/prezto/runcoms/zlogout
+prezto/runcoms/zlogout
