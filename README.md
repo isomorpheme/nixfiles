@@ -31,4 +31,8 @@ All this does is link the appropriate files into your home directory.
 
 # Thanks to
   * @xero for explaining how to use stow for dotfile management. Check out [his dotfile repo](https://github.com/xero/dotfiles).
-  * @sorin-ionescu for developing Prezto, which is awesome.
+  * @sorin-ionescu for developing [Prezto](https://github.com/sorin-ionescu/prezto), which is awesome.
+
+# See also
+  * https://dotfiles.github.io
+  * https://github.com/ijks/prezto
