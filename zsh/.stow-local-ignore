@@ -1,5 +1,0 @@
-# ignore the prezto folder
-/prezto
-
-# install script
-/symlink.sh
