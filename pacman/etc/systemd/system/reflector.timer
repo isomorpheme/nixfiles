@@ -1,0 +1,11 @@
+[Unit]
+Description=Run reflector weekly
+
+[Timer]
+OnCalendar=weekly
+AccuractSec=12h
+Persistent=true
+Unit=reflector.service
+
+[Install]
+WantedBy=timers.target
