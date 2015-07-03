@@ -66,7 +66,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 " END PLUGIN SETTINGS
 
 set background=dark
-colorscheme solarized
+colorscheme base16-monokai
 let base16colorspace=256
 
 "autocmd ColorScheme * highlight Cursor gui=reverse guibg=NONE guifg=NONE
