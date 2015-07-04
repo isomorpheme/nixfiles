@@ -4,9 +4,10 @@ set nocompatible
 filetype off
 
 set encoding=utf-8
+let s:editor_root = expand("~/.vim")
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+let &rtp .= ',' . s:editor_root . '/bundle/Vundle.vim'
+call vundle#begin(s:editor_root . '/bundle')
 
 " BEGIN PLUGINS
 
