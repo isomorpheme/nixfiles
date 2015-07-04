@@ -46,15 +46,10 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-"let g:syntastic_error_symbol = '▞'
-"let g:syntastic_style_error_symbol = '
-
 " airline
 set laststatus=2 " prevents only showing when split
-"autocmd vimenter * AirlineTheme base16
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
+let g:airline_powerline_fonts=1
 
 " Nerdtree
 "autocmd vimenter * NERDTree
