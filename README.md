@@ -17,8 +17,9 @@ For most files and folders, all you have to do is copy them to your home folder.
 ## Exceptions
 Some configurations don't live in the home directory and are installed relative to the filesystem root instead. To install them properly, you have to use the `-t` flag, like so: `stow -t / pacman`.
 
-The current programs which need to be installed from the file root are:
+The current directories which need to be installed from the file root are:
   * pacman
+  * figlet
 
 For zsh, one extra step is needed:
 
