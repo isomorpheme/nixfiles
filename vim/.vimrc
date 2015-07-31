@@ -185,6 +185,10 @@ nnoremap <C-p> :bprevious<CR>
 " close buffer without closing window
 command! C bp | sp | bn | bd
 
+" terminal
+tnoremap <Esc> <C-\><C-n>
+tnoremap <C-Esc> <Esc>
+
 " window management
 map <C-h> <C-w>h
 map <C-j> <C-w>j
