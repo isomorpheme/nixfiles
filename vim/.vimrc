@@ -13,20 +13,25 @@ call vundle#begin(s:editor_root . '/bundle')
 
 Plugin 'gmarik/Vundle.vim'
 
+" language-specific
 Plugin 'sheerun/vim-polyglot'
 
+" interface
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/gundo.vim'
 
+" editing tools
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdcommenter'
 
+" code assistance
 Plugin 'valloric/youcompleteme'
 Plugin 'scrooloose/syntastic'
 Plugin 'myint/syntastic-extras'
 
+" git
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
