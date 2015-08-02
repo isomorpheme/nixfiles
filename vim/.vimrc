@@ -13,7 +13,7 @@ call vundle#begin(s:editor_root . '/bundle')
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'rust-lang/rust.vim'
+Plugin 'sheerun/vim-polyglot'
 
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
