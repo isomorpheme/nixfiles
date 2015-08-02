@@ -48,11 +48,6 @@ call vundle#end()
 filetype plugin indent on
 
 " PLUGIN SETTINGS
-" syntastic
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 " airline
 set laststatus=2 " prevents only showing when split
 let g:airline#extensions#tabline#enabled = 1
@@ -68,6 +63,11 @@ let delimitMate_expand_cr = 1
 
 " youcompleteme
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" syntastic
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " END PLUGIN SETTINGS
 
