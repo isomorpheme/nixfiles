@@ -22,6 +22,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/gundo.vim'
 
 " editing tools
+Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdcommenter'
