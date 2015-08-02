@@ -26,6 +26,7 @@ Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'raimondi/delimitmate'
 
 " code assistance
 Plugin 'valloric/youcompleteme'
@@ -61,6 +62,9 @@ let g:airline_powerline_fonts=1
 "autocmd vimenter * NERDTree
 map <C-t> :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
+
+" delimitMate
+let delimitMate_expand_cr = 1
 
 " youcompleteme
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -141,29 +145,10 @@ nnoremap ^ <nop>
 
 nnoremap gV `[v`] " highlight last inserted text
 
-" bracket, apostrophe, etc - autocomplete
-inoremap {      {}<Left>
+" newline between multiline brackets
 inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
-inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
-
-inoremap (      ()<Left>
 inoremap (<CR>  (<CR>)<Esc>O
-inoremap ((     (
-inoremap ()     ()
-inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
-
-inoremap [      []<Left>
 inoremap [<CR>  [<CR>]<Esc>O
-inoremap [[     [
-inoremap []     []
-inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
-
-inoremap "      ""<Left>
-inoremap ""     "
-inoremap """    """"""<Esc>2hi
-inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" :"\"\"\<Left>"
 
 " leader shortcuts
 let mapleader="," " \ is too far away
