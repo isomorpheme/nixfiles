@@ -43,9 +43,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'sjl/badwolf'
 
 " END PLUGINS
-
 call vundle#end()
-filetype plugin indent on
 
 " PLUGIN SETTINGS
 " airline
@@ -71,6 +69,9 @@ let g:syntastic_check_on_wq = 0
 
 " END PLUGIN SETTINGS
 
+syntax enable
+filetype plugin indent on
+
 set background=dark
 colorscheme base16-flat
 let base16colorspace=256
@@ -81,8 +82,6 @@ let base16colorspace=256
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
-
-syntax enable
 
 " GENERAL SETTINGS
 
