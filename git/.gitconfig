@@ -1,10 +1,10 @@
 [user]
-	name = Daan Rijks
-	email = daanrijks@gmail.com
+    name = Daan Rijks
+    email = daanrijks@gmail.com
 [core]
-	autocrlf = input
-	safecrlf = true
-	askpass = 
+    autocrlf = input
+    safecrlf = true
+    askpass = 
 [alias]
     co = checkout
     cm = commit -m
@@ -16,6 +16,6 @@
     mkbr = checkout -b
     pull-sub = !git pull --recurse-submodules && git submodule update --recursive
 [credential]
-	helper = cache
+    helper = cache
 [push]
-	default = simple
+    default = simple
