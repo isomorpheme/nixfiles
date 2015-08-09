@@ -4,6 +4,7 @@
 [core]
 	autocrlf = input
 	safecrlf = true
+	askpass = 
 [alias]
     co = checkout
     ci = commit
