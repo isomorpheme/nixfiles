@@ -73,8 +73,8 @@ syntax enable
 filetype plugin indent on
 
 set background=dark
-colorscheme base16-flat
 let base16colorspace=256
+colorscheme base16-flat
 
 "autocmd ColorScheme * highlight Cursor gui=reverse guibg=NONE guifg=NONE
 "autocmd ColorScheme * highlight CursorLine gui=reverse
