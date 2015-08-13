@@ -1,0 +1,18 @@
+#!/usr/bin/zsh
+
+setopt LOCAL_OPTIONS
+setopt EXTENDED_GLOB
+
+function wallpaperize {
+    aspectcrop -a 16:9 $1 - | convert mpc:- -resize 1920x1080 jpg:"$2"
+}
+
+mkdir -p original
+
+for img in *.(jpg|png|bmp); do
+  filename=${$(basename "$img")%.*}
+  wallpaperize "$img" "${filename}_wp.png"
+  mv $img ./original/
+done
+
+unsetopt EXTENDED_GLOB
