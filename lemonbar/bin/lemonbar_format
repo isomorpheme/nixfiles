@@ -1,0 +1,22 @@
+#! /usr/bin/zsh
+
+source lemonbar_colors
+source lemonbar_icons
+
+while read -r line; do
+    case $line in
+        D*)
+            _datetime="${line#?} %{A:gsimplecal &:}$ico_calendar%{A}"
+            ;;
+        V*)
+            _volume="$ico_vol_full ${line#?}"
+            ;;
+        F*)
+            _focus="${line#?}"
+    esac
+
+    left="${_focus}"
+    right="${_volume}    ${_datetime}"
+
+    echo "%{l}    $left%{c}$center%{r}$right    "
+done

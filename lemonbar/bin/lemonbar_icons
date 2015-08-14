@@ -1,0 +1,12 @@
+#! /usr/bin/zsh
+
+ico_calendar=''
+
+ico_vol_mute=''
+ico_vol_full=''
+
+ico_bat_0=''
+ico_bat_1=''
+ico_bat_2=''
+ico_bat_3=''
+ico_bat_4=''

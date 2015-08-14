@@ -1,0 +1,25 @@
+#! /usr/bin/zsh
+
+if [ $(pgrep -cx panel) -gt 1 ] ; then
+    printf "%s\n" "Lemonbar is already running." >&2
+    exit 1
+fi
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+# date/time #
+while true; do
+    echo "D$(date "+%T")"
+done  &
+
+# volume #
+while true; do
+    echo "V$(amixer get Master | sed -n 's/^.*\[\([0-9]\+\)%.*$/\1/p' | uniq)"
+done &
+
+# window focus #
+while true; do
+    echo "F$(xdotool getwindowfocus getwindowname)"
+done &
+
+wait
