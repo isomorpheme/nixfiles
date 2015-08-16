@@ -1,25 +1,68 @@
 #! /usr/bin/zsh
 
-if [ $(pgrep -cx panel) -gt 1 ] ; then
-    printf "%s\n" "Lemonbar is already running." >&2
-    exit 1
-fi
+WIFI_DEV="wlp8s0"
+
+PING_COUNT=10
+PING_HOST="8.8.8.8"
 
 trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 
-# date/time #
+# time #
 while true; do
-    echo "D$(date "+%T")"
-done  &
+    echo "T$(date "+%H:%M")"
+    sleep 5
+done &
+
+# battery level #
+while true; do
+    echo "B$(acpi -b | grep -o '[[:digit:]]\+%' | sed 's/%//')"
+    sleep 30
+done &
+
+# battery charging #
+while true; do
+    if [[ -n $(acpi -b| grep Charging) ]]; then
+        echo "Bc"
+    else
+        echo "Bd"
+    fi
+    sleep 1
+done &
 
 # volume #
 while true; do
     echo "V$(amixer get Master | sed -n 's/^.*\[\([0-9]\+\)%.*$/\1/p' | uniq)"
+    sleep 0.1
 done &
 
 # window focus #
 while true; do
     echo "F$(xdotool getwindowfocus getwindowname)"
+    sleep 0.2
+done &
+
+# wifi strength #
+while true; do
+    echo "Ws$(awk 'NR==3 {print $3}' /proc/net/wireless | sed 's/\.//')"
+    sleep 5
+done &
+
+# wifi ssid #
+while true; do
+    echo "Wi$(iw ${WIFI_DEV} link | grep 'SSID' | awk '{print $2}')"
+    sleep 10
+done &
+
+# wifi connected #
+while true; do
+    ! iw $WIFI_DEV link | grep 'SSID' && echo "Wd"
+    sleep 1
+done
+
+# ping #
+while true; do
+    echo "Wp$(ping -c $PING_COUNT $PING_HOST | tail -1 | awk -F '/' '{print $5}')"
+    sleep 0.1
 done &
 
 wait

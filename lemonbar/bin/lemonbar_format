@@ -5,18 +5,66 @@ source lemonbar_icons
 
 while read -r line; do
     case $line in
-        D*)
-            _datetime="${line#?} %{A:gsimplecal &:}$ico_calendar%{A}"
+        T*)
+            _time="%{A:gsimplecal &:}$ico_clock  ${line:1}%{A}"
             ;;
         V*)
-            _volume="$ico_vol_full ${line#?}"
+            _volume="$ico_vol_full ${line:1}"
             ;;
         F*)
-            _focus="${line#?}"
+            _focus="${line:1}"
+            ;;
+        Wd)
+            _wifi="%{F$red}$ico_wifi%{F-}"
+            ;;
+        W*)
+            case ${line:1} in
+                s*)
+                    _wifi_signal="${line:2}%"
+                    ;;
+                i*)
+                    _wifi_ssid="${line:2}"
+                    ;;
+            esac
+            _wifi="$ico_wifi  $_wifi_ssid  $_wifi_signal"
+            ;;
+        B*)
+            case ${line:1} in
+                c)
+                    _charging="true"
+                    ;;
+                d)
+                    _charging="false"
+                    ;;
+                *)
+                    local _battery_val=${line:1}
+                    local _battery_ico
+                    local _battery_color='-'
+
+                    if [[ $_charging = "true" ]]; then
+                        _battery_ico=$ico_bat_c
+                        _battery_color=$green
+                    elif [[ $_battery_val -le 10 ]]; then
+                        _battery_ico="$ico_bat_0"
+                        _battery_color=$red
+                    elif [[ $_battery_val -le 40 ]]; then
+                        _battery_ico="$ico_bat_1"
+                    elif [[ $_battery_val -le 60 ]]; then
+                        _battery_ico="$ico_bat_2"
+                    elif [[ $_battery_val -le 80 ]]; then
+                        _battery_ico="$ico_bat_3"
+                    elif [[ $_battery_val -le 100 ]]; then
+                        _battery_ico="$ico_bat_4"
+                    fi
+
+                    _battery="%{F$_battery_color}$_battery_ico  $_battery_val%{F-}"
+                    ;;
+            esac
+            ;;
     esac
 
     left="${_focus}"
-    right="${_volume}    ${_datetime}"
+    right="${_battery}    ${_wifi}    ${_volume}     ${_time}"
 
     echo "%{l}    $left%{c}$center%{r}$right    "
 done

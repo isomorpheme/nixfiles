@@ -1,14 +1,18 @@
 #! /usr/bin/zsh
 
-## colors ##
 source lemonbar_colors
-source lemonbar_icons
 
-LEMONBAR_FG='white'
-LEMONBAR_BG='black'
+LEMONBAR_FG="$blue"
+LEMONBAR_BG="$white"
+
+LEMONBAR_H=33
+LEMONBAR_U=3
+
+LEMONBAR_FONT="Source Sans Pro:size=11:style=bold"
+LEMONBAR_ICO="FontAwesome:size=12"
 
 lemonbar_data | lemonbar_format | lemonbar -p \
-       -g 'x33' -u 3 \
-       -f "Source Sans Pro:size=11:style=bold" -f "FontAwesome:size=12" \
+       -g "x$LEMONBAR_H" -u $LEMONBAR_U \
+       -f "$LEMONBAR_FONT" -f "$LEMONBAR_ICO" \
        -B "$LEMONBAR_BG" -F "$LEMONBAR_FG" \
        | zsh &

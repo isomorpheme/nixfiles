@@ -1,5 +1,8 @@
 git
 
+xdotool
+alsa-utils
+
 pygmentize
 fortune-mod
 cowsay
