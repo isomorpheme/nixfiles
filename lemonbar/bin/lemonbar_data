@@ -19,7 +19,7 @@ while true; do
     sleep 30
 done &
 
-# battery charging #
+# battery state #
 while true; do
     if [[ -n $(acpi -b| grep Charging) ]]; then
         echo "Bc"

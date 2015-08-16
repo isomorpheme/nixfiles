@@ -37,14 +37,10 @@ while read -r line; do
                     _charging="false"
                     ;;
                 *)
-                    local _battery_val=${line:1}
-                    local _battery_ico
-                    local _battery_color='-'
+                    _battery_val=${line:1}
+                    _battery_color='-'
 
-                    if [[ $_charging = "true" ]]; then
-                        _battery_ico=$ico_bat_c
-                        _battery_color=$green
-                    elif [[ $_battery_val -le 10 ]]; then
+                    if [[ $_battery_val -le 10 ]]; then
                         _battery_ico="$ico_bat_0"
                         _battery_color=$red
                     elif [[ $_battery_val -le 40 ]]; then
@@ -56,10 +52,16 @@ while read -r line; do
                     elif [[ $_battery_val -le 100 ]]; then
                         _battery_ico="$ico_bat_4"
                     fi
-
-                    _battery="%{F$_battery_color}$_battery_ico  $_battery_val%{F-}"
                     ;;
             esac
+
+            if [[ $_charging = "false" ]]; then
+                _battery="%{F$_battery_color}$_battery_ico  $_battery_val%%{F-}"
+            fi
+
+            if [[ $_charging = "true" ]]; then
+                _battery="%{F$green}$ico_bat_c  $_battery_val%%{F-}"
+            fi
             ;;
     esac
 
