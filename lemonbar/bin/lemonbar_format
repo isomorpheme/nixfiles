@@ -31,10 +31,13 @@ while read -r line; do
         B*)
             case ${line:1} in
                 c)
-                    _charging="true"
+                    _state="charging"
                     ;;
                 d)
-                    _charging="false"
+                    _state="discharging"
+                    ;;
+                f)
+                    _state="full"
                     ;;
                 *)
                     _battery_val=${line:1}
@@ -55,12 +58,16 @@ while read -r line; do
                     ;;
             esac
 
-            if [[ $_charging = "false" ]]; then
+            if [[ $_state = "discharging" ]]; then
                 _battery="%{F$_battery_color}$_battery_ico  $_battery_val%%{F-}"
             fi
 
-            if [[ $_charging = "true" ]]; then
+            if [[ $_state = "charging" ]]; then
                 _battery="%{F$green}$ico_bat_c  $_battery_val%%{F-}"
+            fi
+
+            if [[ $_state = "full" ]]; then
+                _battery="%{F$green}$_battery_ico  $_battery_val%%{F-}"
             fi
             ;;
     esac
