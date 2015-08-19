@@ -20,13 +20,20 @@ while read -r line; do
         W*)
             case ${line:1} in
                 s*)
-                    _wifi_signal="${line:2}%"
+                    if [[ -n "${line:2}" ]]; then
+                        _wifi_signal="${line:2}%"
+                        _wifi_color="-"
+                    else
+                        _wifi_signal=""
+                        _wifi_color=$red
+                    fi
                     ;;
                 i*)
                     _wifi_ssid="${line:2}"
                     ;;
             esac
-            _wifi="$ico_wifi  $_wifi_ssid  $_wifi_signal"
+
+            _wifi="%{F$_wifi_color}$ico_wifi  $_wifi_ssid  $_wifi_signal%{F-}"
             ;;
         B*)
             case ${line:1} in
