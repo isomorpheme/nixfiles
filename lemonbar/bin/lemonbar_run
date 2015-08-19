@@ -5,7 +5,7 @@ source lemonbar_colors
 LEMONBAR_FG="$blue"
 LEMONBAR_BG="$white"
 
-LEMONBAR_H=33
+LEMONBAR_H=$1
 LEMONBAR_U=3
 
 LEMONBAR_FONT="Source Sans Pro:size=11:style=bold"
