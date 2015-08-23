@@ -1,23 +1,36 @@
 #! /usr/bin/zsh
 
+setopt LOCAL_OPTIONS
+setopt shwordsplit
+
 source lemonbar_colors
 source lemonbar_icons
 
+P="   " # padding
+P2=$P$P
+
+_monitors=$(bspc query -M | wc -l)
+
 while read -r line; do
     case $line in
+        # Time #
         T*)
             _time="%{A:gsimplecal &:}$ico_clock  ${line:1}%{A}"
             ;;
+
+        # Volume #
         V*)
             _volume="$ico_vol_full ${line:1}"
             ;;
         F*)
             _focus="${line:1}"
             ;;
-        Wd)
+
+        # Network #
+        Nd)
             _wifi="%{F$red}$ico_wifi%{F-}"
             ;;
-        W*)
+        N*)
             case ${line:1} in
                 s*)
                     if [[ -n "${line:2}" ]]; then
@@ -25,7 +38,7 @@ while read -r line; do
                         _wifi_color="-"
                     else
                         _wifi_signal=""
-                        _wifi_color=$red
+                        _wifi_color="$red"
                     fi
                     ;;
                 i*)
@@ -33,8 +46,10 @@ while read -r line; do
                     ;;
             esac
 
-            _wifi="%{F$_wifi_color}$ico_wifi  $_wifi_ssid  $_wifi_signal%{F-}"
+            _wifi="%{F$_wifi_color}$ico_wifi$P$_wifi_ssid$P$_wifi_signal%{F-}"
             ;;
+
+        # Battery #
         B*)
             case ${line:1} in
                 c)
@@ -66,21 +81,74 @@ while read -r line; do
             esac
 
             if [[ $_state = "discharging" ]]; then
-                _battery="%{F$_battery_color}$_battery_ico  $_battery_val%%{F-}"
+                _battery="%{F$_battery_color}$_battery_ico$P$_battery_val%%{F-}"
             fi
 
             if [[ $_state = "charging" ]]; then
-                _battery="%{F$green}$ico_bat_c  $_battery_val%%{F-}"
+                _battery="%{F$green}$ico_bat_c$P$_battery_val%%{F-}"
             fi
 
             if [[ $_state = "full" ]]; then
-                _battery="%{F$green}$_battery_ico  $_battery_val%%{F-}"
+                _battery="%{F$green}$_battery_ico$P$_battery_val%%{F-}"
             fi
             ;;
+
+            # bspwm #
+            W*)
+                _bspwm=""
+                IFS=':' # split on ':'
+                set -- ${line#?} # set line to $@ or something like that
+                while [[ $# -gt 0 ]]; do
+                    item=$1
+                    name=${item#?}
+                    case $item in
+                        M*)
+                            # active monitor
+                            if [[ $_monitors -gt 1 ]] ; then
+                                _bspwm="$_bspwm${name}$P"
+                            fi 
+                            ;;
+                        m*)
+                            # inactive monitor
+                            if [[ $_monitors -gt 1 ]] ; then
+                                _bspwm="$_bspwm${name}$P"
+                            fi
+                            ;;
+                        #O*)
+                            ## focused occupied desktop
+                                #_bspwm="$_bspwm${name}$P"
+                            #;;
+                        #F*)
+                            ## focused free desktop
+                                #_bspwm="$_bspwm${name}$P"
+                            #;;
+                        #U*)
+                            ## focused urgent desktop
+                                #_bspwm="$_bspwm${name}$P"
+                            #;;
+                        O*|F*|U*)
+                            _bspwm="$_bspwm%{U$blue}%{+u} ${name} %{-u}%{U-}$P"
+                            ;;
+                        o*)
+                            # occupied desktop
+                                _bspwm="$_bspwm ${name} $P"
+                            ;;
+                        f*)
+                            # free desktop
+                                _bspwm="$_bspwm ${name} $P"
+                            ;;
+                        u*)
+                            # urgent desktop
+                                _bspwm="$_bspwm ${name} $P"
+                            ;;
+                    esac
+                    shift
+                done
+                ;;
     esac
 
-    left="${_focus}"
-    right="${_battery}    ${_wifi}    ${_volume}     ${_time}"
+    left="$_bspwm"
+    right="$_wifi$P2$_battery$P2$_volume$P2$_time"
 
-    echo "%{l}    $left%{c}$center%{r}$right    "
+    echo "%{l}$P2$left%{c}$center%{r}$right$P2"
 done

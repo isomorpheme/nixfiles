@@ -7,6 +7,8 @@ PING_HOST="8.8.8.8"
 
 trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 
+bspc control --subscribe &
+
 # time #
 while true; do
     echo "T$(date "+%H:%M")"
@@ -45,19 +47,19 @@ done &
 
 # wifi strength #
 while true; do
-    echo "Ws$(awk 'NR==3 {print $3}' /proc/net/wireless | sed 's/\.//')"
+    echo "Ns$(awk 'NR==3 {print $3}' /proc/net/wireless | sed 's/\.//')"
     sleep 5
 done &
 
 # wifi ssid #
 while true; do
-    echo "Wi$(iw ${WIFI_DEV} link | grep 'SSID' | awk '{print $2}')"
+    echo "Ni$(iw ${WIFI_DEV} link | grep 'SSID' | awk '{print $2}')"
     sleep 10
 done &
 
 # wifi connected #
 while true; do
-    ! iw $WIFI_DEV link | grep 'SSID' && echo "Wd"
+    ! iw $WIFI_DEV link | grep 'SSID' && echo "Nd"
     sleep 1
 done
 
