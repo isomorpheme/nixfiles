@@ -15,7 +15,7 @@ while read -r line; do
     case $line in
         # Time #
         T*)
-            _time="%{A:gsimplecal &:}$ico_clock  ${line:1}%{A}"
+            _time="%{A:gsimplecal &:}$ico_clock$P${line:1}%{A}"
             ;;
 
         # Volume #
