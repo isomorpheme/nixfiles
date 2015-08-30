@@ -1,0 +1,20 @@
+#! /usr/bin/zsh
+
+source lemonbar_colors
+
+local screen_width=$(xdpyinfo | grep dimensions: | awk '{print $2}' | cut -d 'x' -f1)
+
+local width=$(( $screen_width * 0.4 ))
+local height=$(( $width * 0.05 ))
+local yoffset=$(($(bspc config window_gap) + 30))
+local xoffset=$(( ($screen_width - $width) / 2 ))
+
+# source: https://github.com/ema/dotfiles
+function recent {
+    echo $PATH | tr ':' '\n' | uniq | sed 's#$#/#' | # List directories in $PATH
+        xargs ls -lu --time-style=+%s |              # Add atime epoch
+        awk '/^(-|l)/ { print $6, $7 }' |            # Only print timestamp and name
+        sort -rn | cut -d' ' -f 2
+}
+
+dmenu_run -z -fn 'Source Code Pro 12' -b -x $xoffset -y $yoffset -w $width -h $height -sb "$blue"
