@@ -40,10 +40,10 @@ while true; do
 done &
 
 # window focus #
-while true; do
-    echo "F$(xdotool getwindowfocus getwindowname)"
-    sleep 0.2
-done &
+#while true; do
+#    echo "F$(xdotool getwindowfocus getwindowname)"
+#    sleep 0.2
+#done &
 
 # wifi strength #
 while true; do
