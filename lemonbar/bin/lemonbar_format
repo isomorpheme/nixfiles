@@ -115,17 +115,17 @@ while read -r line; do
                             fi
                             ;;
                         #O*)
-                            ## focused occupied desktop
-                                #_bspwm="$_bspwm${name}$P"
-                            #;;
+                        #    # focused occupied desktop
+                        #        _bspwm="$_bspwm${name}$P"
+                        #    ;;
                         #F*)
-                            ## focused free desktop
-                                #_bspwm="$_bspwm${name}$P"
-                            #;;
+                        #    # focused free desktop
+                        #        _bspwm="$_bspwm${name}$P"
+                        #    ;;
                         #U*)
-                            ## focused urgent desktop
-                                #_bspwm="$_bspwm${name}$P"
-                            #;;
+                        #    # focused urgent desktop
+                        #        _bspwm="$_bspwm${name}$P"
+                        #    ;;
                         O*|F*|U*)
                             _bspwm="$_bspwm%{U$blue}%{+u} ${name} %{-u}%{U-}$P"
                             ;;
