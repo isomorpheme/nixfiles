@@ -124,6 +124,13 @@ set showmatch
 set list " show whitespace
 set listchars=eol:¬,trail:·,tab:»\ 
 
+" gvim settings
+set guifont=Source_Code_Pro:h11:cANSI
+" remove all those stupid ui elements
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+
 " text wrap
 set wrap
 set linebreak
