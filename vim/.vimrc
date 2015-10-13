@@ -4,7 +4,12 @@ set nocompatible
 filetype off
 
 set encoding=utf-8
-let s:editor_root = expand("~/.vim")
+if has('windows')
+    let s:editor_root = expand("~/vim")
+else
+    let s:editor_root = expand("~/.vim")
+endif
+
 
 let &rtp .= ',' . s:editor_root . '/bundle/Vundle.vim'
 call vundle#begin(s:editor_root . '/bundle')
@@ -27,9 +32,13 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'raimondi/delimitmate'
+Plugin 'dhruvasagar/vim-table-mode'
 
 " code assistance
-Plugin 'valloric/youcompleteme'
+if !has("win32")
+    Plugin 'valloric/youcompleteme'
+endif
+
 Plugin 'scrooloose/syntastic'
 Plugin 'myint/syntastic-extras'
 
@@ -88,10 +97,13 @@ endif
 set history=10000
 set hidden
 
+" make backspace usable
+set backspace=2
+
 " don't put temporary junk in my working directory! >:(
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
-set undodir=~/.vim/undo/
+let &backupdir=s:editor_root . "/backup//"
+let &directory=s:editor_root . "/swap//"
+let &undodir=s:editor_root . "/undo/"
 
 " tabs 'n spaces
 set tabstop=4
