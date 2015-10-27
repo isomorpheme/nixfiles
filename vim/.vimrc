@@ -20,6 +20,8 @@ Plugin 'gmarik/Vundle.vim'
 
 " language-specific
 Plugin 'sheerun/vim-polyglot'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 " interface
 Plugin 'bling/vim-airline'
@@ -55,6 +57,10 @@ Plugin 'sjl/badwolf'
 call vundle#end()
 
 " PLUGIN SETTINGS
+" vim-pandoc
+let g:pandoc#modules#disabled = ["spell"]
+let g:pandoc#folding#fdc = 0
+
 " airline
 set laststatus=2 " prevents only showing when split
 let g:airline#extensions#tabline#enabled = 1
