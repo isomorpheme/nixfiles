@@ -1,8 +1,8 @@
 vim/.vim/bundle
 vim/.vim/swap
 
-nvim/.vim/bundle
-nvim/.vim/swap
+neovim/.config/nvim/bundle
+neovim/.config/nvim/swap
 
 ################################################################################
 # Created by https://www.gitignore.io
