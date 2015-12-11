@@ -25,7 +25,7 @@ ctrl + alt + {_,s + }{h,j,k,l}
 ctrl + alt + {comma,period}
     bspc desktop --circulate {backward,forward}
 
-super + ctrl + {h,j,k,l}
+ctrl + alt + {left,down,up,right}
     bspc window --presel {left,down,up,right}
 
 ctrl + alt + space

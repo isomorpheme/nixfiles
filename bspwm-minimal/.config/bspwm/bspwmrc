@@ -1,9 +1,15 @@
 #! /bin/sh
+source ~/bin/lemonbar_colors
 
 PATH=$PATH:$HOME/bin
 
-bspc config border_width 3
+bspc config border_width 2
 bspc config window_gap 0
+
+bspc config focused_border_color $blue
+bspc config normal_border_color $grey
+
+bspc monitor -d main
 
 bspc config split_ratio         0.50
 #bspc config borderless_monocle  true
