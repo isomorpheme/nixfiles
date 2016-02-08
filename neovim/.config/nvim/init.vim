@@ -15,6 +15,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " language-specific
 Plugin 'sheerun/vim-polyglot'
+Plugin 'rust-lang/rust.vim'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 
@@ -53,6 +54,10 @@ filetype plugin indent on
 syntax enable
 
 " PLUGIN SETTINGS
+" Polyglot
+"" Rust
+let g:rustfmt_autosave = 1
+
 " vim-pandoc
 let g:pandoc#modules#disabled = ["spell"]
 let g:pandoc#folding#fdc = 0
