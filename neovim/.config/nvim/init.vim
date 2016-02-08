@@ -34,7 +34,6 @@ Plugin 'dhruvasagar/vim-table-mode'
 
 " code assistance
 Plugin 'valloric/youcompleteme'
-
 Plugin 'scrooloose/syntastic'
 Plugin 'myint/syntastic-extras'
 
