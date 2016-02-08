@@ -49,6 +49,9 @@ Plugin 'sjl/badwolf'
 " END PLUGINS
 call vundle#end()
 
+filetype plugin indent on
+syntax enable
+
 " PLUGIN SETTINGS
 " vim-pandoc
 let g:pandoc#modules#disabled = ["spell"]
@@ -69,16 +72,20 @@ let delimitMate_expand_cr = 1
 
 " youcompleteme
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_rust_src_path = '~/code/external/rust'
 
 " syntastic
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" END PLUGIN SETTINGS
+let g:syntastic_error_symbol = ""
+let g:syntastic_style_error_symbol = ""
+let g:syntastic_warning_symbol = ""
+let g:syntastic_style_warning_symbol = ""
 
-syntax enable
-filetype plugin indent on
+
+" END PLUGIN SETTINGS
 
 set background=dark
 let base16colorspace=256
@@ -86,6 +93,8 @@ colorscheme base16-flat
 
 "autocmd ColorScheme * highlight Cursor gui=reverse guibg=NONE guifg=NONE
 "autocmd ColorScheme * highlight CursorLine gui=reverse
+
+highlight SyntasticErrorSign ctermfg=Red ctermbg=18
 
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
