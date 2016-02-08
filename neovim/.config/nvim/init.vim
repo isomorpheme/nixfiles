@@ -212,6 +212,9 @@ command! C bp | sp | bn | bd
 if has('nvim')
     tnoremap <Esc> <C-\><C-n>
     tnoremap <C-Esc> <Esc>
+
+    command! TerminalSplit sp | execute "normal! <C-w>j" | terminal
+    cnoreabbrev tsp TerminalSplit
 endif
 
 " window management
