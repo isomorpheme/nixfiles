@@ -209,7 +209,7 @@ nnoremap <C-p> :bprevious<CR>
 command! C bp | sp | bn | bd
 
 " terminal
-if has('neovim')
+if has('nvim')
     tnoremap <Esc> <C-\><C-n>
     tnoremap <C-Esc> <Esc>
 endif
