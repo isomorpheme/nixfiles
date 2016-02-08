@@ -109,6 +109,8 @@ endif
 set history=10000
 set hidden
 
+set clipboard+=unnamedplus
+
 " make backspace usable
 set backspace=2
 
