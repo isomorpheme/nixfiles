@@ -173,6 +173,20 @@ inoremap {<CR>  {<CR>}<Esc>O
 inoremap (<CR>  (<CR>)<Esc>O
 inoremap [<CR>  [<CR>]<Esc>O
 
+" toggle between relative numbers
+" src: http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+    set norelativenumber
+  else
+    set nonumber
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
+
 " leader shortcuts
 let mapleader="," " \ is too far away
 
