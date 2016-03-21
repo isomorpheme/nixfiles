@@ -165,12 +165,6 @@ set foldmethod=indent
 nnoremap j gj
 nnoremap k gk
 
-" rebind begin/end of line.
-nnoremap B ^
-nnoremap E $
-nnoremap $ <nop>
-nnoremap ^ <nop>
-
 nnoremap gV `[v`] " highlight last inserted text
 
 " newline between multiline brackets
