@@ -165,7 +165,8 @@ set foldmethod=indent
 nnoremap j gj
 nnoremap k gk
 
-nnoremap gV `[v`] " highlight last inserted text
+" highlight last inserted text
+nnoremap gV `[v`]
 
 " newline between multiline brackets
 inoremap {<CR>  {<CR>}<Esc>O
