@@ -193,8 +193,8 @@ nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <leader>s :mksession<CR>
 
 " buffer switching
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprevious<CR>
+nnoremap <C-]> :bnext<CR>
+nnoremap <C-[> :bprevious<CR>
 
 " close buffer without closing window
 command! C bp | sp | bn | bd
