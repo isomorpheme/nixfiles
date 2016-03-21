@@ -52,7 +52,7 @@ colorscheme base16-flat
 " PLUGIN SETTINGS
 " Polyglot
 "" Rust
-let g:rustfmt_autosave = 1
+let g:rustfmt_autosave = 0
 
 " vim-airline-themes
 let g:airline_theme='base16'
