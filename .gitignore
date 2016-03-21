@@ -3,6 +3,8 @@ vim/.vim/swap
 
 neovim/.config/nvim/bundle
 neovim/.config/nvim/swap
+neovim/.config/nvim/autoload
+neovim/.config/nvim/plugged
 
 ################################################################################
 # Created by https://www.gitignore.io

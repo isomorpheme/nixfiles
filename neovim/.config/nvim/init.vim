@@ -1,61 +1,61 @@
 " thx to: http://dougblack.io/words/a-good-vimrc.html
 
-set nocompatible
-filetype off
-
 let s:editor_root = expand("~/.config/nvim")
 
-let &rtp .= ',' . s:editor_root . '/bundle/Vundle.vim'
-
-call vundle#begin(s:editor_root . '/bundle')
+call plug#begin(s:editor_root . '/plugged')
 
 " BEGIN PLUGINS
 
-Plugin 'VundleVim/Vundle.vim'
+Plug 'VundleVim/Vundle.vim'
 
 " language-specific
-Plugin 'sheerun/vim-polyglot'
-Plugin 'rust-lang/rust.vim'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plug 'sheerun/vim-polyglot'
+Plug 'rust-lang/rust.vim'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " interface
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdtree'
-Plugin 'sjl/gundo.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'sjl/gundo.vim'
 
 " editing tools
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'raimondi/delimitmate'
-Plugin 'dhruvasagar/vim-table-mode'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'scrooloose/nerdcommenter'
+Plug 'raimondi/delimitmate'
+Plug 'dhruvasagar/vim-table-mode'
 
 " code assistance
-Plugin 'valloric/youcompleteme'
-Plugin 'scrooloose/syntastic'
-Plugin 'myint/syntastic-extras'
+Plug 'valloric/youcompleteme', {'do': 'python2 ./install.py --racer-completer'}
+Plug 'scrooloose/syntastic'
+Plug 'myint/syntastic-extras'
 
 " git
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Colourschemes
-Plugin 'chriskempson/base16-vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'sjl/badwolf'
+Plug 'chriskempson/base16-vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'sjl/badwolf'
 
 " END PLUGINS
-call vundle#end()
+call plug#end()
 
-filetype plugin indent on
-syntax enable
+set background=dark
+let base16colorspace=256
+colorscheme base16-flat
 
 " PLUGIN SETTINGS
 " Polyglot
 "" Rust
 let g:rustfmt_autosave = 1
+
+" vim-airline-themes
+let g:airline_theme='base16'
 
 " vim-pandoc
 let g:pandoc#modules#disabled = ["spell"]
@@ -90,10 +90,6 @@ let g:syntastic_style_warning_symbol = ""
 
 
 " END PLUGIN SETTINGS
-
-set background=dark
-let base16colorspace=256
-colorscheme base16-flat
 
 "autocmd ColorScheme * highlight Cursor gui=reverse guibg=NONE guifg=NONE
 "autocmd ColorScheme * highlight CursorLine gui=reverse
