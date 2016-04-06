@@ -16,6 +16,7 @@
 
     mkbr = checkout -b
     pull-sub = !git pull --recurse-submodules && git submodule update --recursive
+    ce = commit
 [credential]
     helper = cache
 [push]
