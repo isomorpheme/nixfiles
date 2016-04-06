@@ -73,6 +73,9 @@ let NERDTreeMinimalUI=1
 
 " delimitMate
 let delimitMate_expand_cr = 1
+let delimitMate_quotes = "\" ' `"
+let delimitMate_nesting_quotes = ['"','`']
+let delimitMate_matchpairs = "(:),[:],{:}"
 
 " youcompleteme
 let g:ycm_autoclose_preview_window_after_completion = 1
