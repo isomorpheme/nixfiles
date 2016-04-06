@@ -154,7 +154,7 @@ set scrolloff=8
 " searching
 set incsearch
 set hlsearch
-nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <CR> :nohlsearch<CR><CR>
 set smartcase " Only case-sensitive if search contains caps
 
 " folding
