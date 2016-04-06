@@ -5,6 +5,7 @@ neovim/.config/nvim/bundle
 neovim/.config/nvim/swap
 neovim/.config/nvim/autoload
 neovim/.config/nvim/plugged
+neovim/.config/nvim/.netrwhist
 
 ################################################################################
 # Created by https://www.gitignore.io
