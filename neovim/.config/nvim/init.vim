@@ -148,6 +148,9 @@ set guioptions-=r
 set wrap
 set linebreak
 
+" scrolling
+set scrolloff=8
+
 " searching
 set incsearch
 set hlsearch
@@ -223,6 +226,8 @@ if has('nvim')
 
     command! TerminalSplit sp | execute "normal! <C-w>j" | terminal
     cnoreabbrev tsp TerminalSplit
+
+    autocmd! TermOpen * setlocal scrolloff=0
 endif
 
 " window management
