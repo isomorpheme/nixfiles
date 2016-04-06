@@ -20,3 +20,5 @@
     helper = cache
 [push]
     default = simple
+[diff]
+    algorithm = histogram
