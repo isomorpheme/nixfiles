@@ -7,6 +7,9 @@
     safecrlf = true
     askpass = 
 
+[color]
+    ui = auto
+
 [alias]
     ps = push
     pl = pull
