@@ -58,14 +58,6 @@ set hlsearch
 nnoremap <leader><space> :nohlsearch<CR>
 set smartcase " Only case-sensitive if search contains caps
 
-" folding
-set foldenable
-set foldlevelstart=10
-set foldnestmax=10
-nnoremap <space> za 
-" space toggles folds
-set foldmethod=indent
-
 "MAPPINGS
 " movement
 " visual movement, i.e. don't skip wrapped parts of lines
