@@ -92,9 +92,6 @@ let mapleader="," " \ is too far away
 
 " edit vimrc/zshrc and load vimrc bindings
 nnoremap <leader>ev :e $MYVIMRC<CR>
-nnoremap <leader>ez :e ~/.zshrc<CR>
-nnoremap <leader>ee :e ~/.zshenv<CR>
-nnoremap <leader>ep :e ~/.zprezto/modules/prompt/functions/prompt_ijks_setup<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " change cwd to parent of file
