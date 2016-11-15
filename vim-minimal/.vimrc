@@ -110,3 +110,4 @@ nnoremap <C-l> <C-w>l
 " COMMANDS
 command! BufferSaveClose w | bdelete
 abbreviate bx BufferSaveClose
+abbreviate bc bdelete
