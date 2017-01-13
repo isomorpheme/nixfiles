@@ -8,11 +8,16 @@ set t_Co=256
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'sheerun/vim-polyglot'
+Plug 'alvan/vim-closetag'
+
 Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/base16-vim'
+Plug 'reedes/vim-colors-pencil'
 
 call plug#end()
 
