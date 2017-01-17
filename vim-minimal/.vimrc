@@ -18,6 +18,7 @@ Plug 'alvan/vim-closetag'
 Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/base16-vim'
 Plug 'reedes/vim-colors-pencil'
+Plug 'baskerville/bubblegum'
 
 call plug#end()
 
@@ -25,11 +26,11 @@ filetype plugin indent on
 syntax enable
 
 set background=dark
-colorscheme solarized
+colorscheme bubblegum-256-dark
 
 " PLUGIN SETTINGS
 " airline
-let g:airline_theme='solarized'
+let g:airline_theme='bubblegum'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline#extensions#tabline#enabled = 1
