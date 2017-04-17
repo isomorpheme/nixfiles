@@ -11,6 +11,8 @@ neovim/.config/nvim/autoload
 neovim/.config/nvim/plugged
 neovim/.config/nvim/.netrwhist
 
+fish/.config/fish/fish_history
+
 ################################################################################
 # Created by https://www.gitignore.io
 
