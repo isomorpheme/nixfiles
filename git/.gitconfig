@@ -12,8 +12,7 @@
 
 [alias]
     ps = push
-    pl = pull
-    plr = pull --rebase
+    pl = pull --rebase
     co = checkout
     c = commit
     st = status
