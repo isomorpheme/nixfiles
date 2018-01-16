@@ -18,3 +18,6 @@ set -gx VISUAL "code --wait"
 
 set -gx PATH "$HOME/.local/bin" $PATH
 set -gx PATH "$HOME/.cargo/bin" $PATH
+
+set gem_user_dir (ruby -e 'print Gem.user_dir')
+set -gx PATH "$gem_user_dir/bin" $PATH
