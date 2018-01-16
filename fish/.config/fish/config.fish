@@ -4,6 +4,8 @@
 
 alias la "ls -a"
 
+abbr --add p (detect_package_manager)
+
 abbr --add g git
 
 #
