@@ -7,12 +7,12 @@ alias la "ls -a"
 abbr --add g git
 
 #
-# Environment variables
+# environment variables
 #
 
 set -gx EDITOR "vim"
 set -gx GIT_EDITOR $EDITOR
-set -gx VISUAL "code"
+set -gx VISUAL "code --wait"
 
 set -gx PATH "$HOME/.local/bin" $PATH
 set -gx PATH "$HOME/.cargo/bin" $PATH
