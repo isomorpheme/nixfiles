@@ -27,3 +27,10 @@ function fish_prompt
     echo -n "$input_char "
 end
 
+function fish_right_prompt
+    if test $status -ne 0
+        set_color white --background red
+        printf " \uf06a " # fa-exclamation-circle
+        set_color normal
+    end
+end
