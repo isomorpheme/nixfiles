@@ -4,7 +4,7 @@ function detect_distro --description "Get the distro ID from /etc/os-release."
         return 1
     end
 
-    set distro_id (grep 'ID=.*' $release_file | sed 's/ID=//')
+    set distro_id (grep '^ID=.*' $release_file | sed 's/ID=//')
 
     if test -z $distro_id
         return 1
