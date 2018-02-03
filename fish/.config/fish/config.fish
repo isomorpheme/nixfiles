@@ -17,7 +17,12 @@ set -gx GIT_EDITOR $EDITOR
 set -gx VISUAL "code --wait"
 
 set -gx PATH "$HOME/.local/bin" $PATH
-set -gx PATH "$HOME/.cargo/bin" $PATH
 
-set gem_user_dir (ruby -e 'print Gem.user_dir')
-set -gx PATH "$gem_user_dir/bin" $PATH
+if type -q cargo
+    set -gx PATH "$HOME/.cargo/bin" $PATH
+end
+
+if type -q ruby
+    set gem_user_dir (ruby -e 'print Gem.user_dir')
+    set -gx PATH "$gem_user_dir/bin" $PATH
+end
