@@ -1,8 +1,8 @@
 function detect_package_manager --description "Detect the appropriate package manager to use."
     switch (detect_distro)
         case 'arch'
-            if type -q 'pacaur'
-                set manager "pacaur"
+            if type -q 'aurman'
+                set manager "aurman"
                 set do_sudo false
             else
                 set manager "pacman"
