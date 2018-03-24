@@ -25,4 +25,5 @@ end
 if type -q ruby
     set gem_user_dir (ruby -e 'print Gem.user_dir')
     set -gx PATH "$gem_user_dir/bin" $PATH
+    set -gx GEM_HOME $gem_user_dir
 end
