@@ -36,3 +36,6 @@
 [tig]
     main-view-author = abbreviated
     main-view-date = relative-compact
+
+[rebase]
+    autosquash = true
