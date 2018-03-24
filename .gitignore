@@ -12,6 +12,7 @@ neovim/.config/nvim/plugged
 neovim/.config/nvim/.netrwhist
 
 fish/.config/fish/fish_history
+fish/.config/fish/fishd.*
 
 ################################################################################
 # Created by https://www.gitignore.io
