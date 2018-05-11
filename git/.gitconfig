@@ -7,6 +7,9 @@
     safecrlf = warn
     askpass = 
 
+[credential]
+    helper = cache --timeout=1800
+
 [color]
     ui = auto
 
@@ -24,21 +27,18 @@
     lgraph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%ad%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --date='format:%y/%-m/%-d %H:%M'
     pull-sub = !git pull --recurse-submodules && git submodule update --recursive
 
-[credential]
-    helper = cache
-
 [push]
     default = simple
 
 [diff]
     algorithm = histogram
 
+[rebase]
+    autosquash = true
+
 [tig]
     main-view-author = abbreviated
     main-view-date = relative-compact
-
-[rebase]
-    autosquash = true
 
 [filter "lfs"]
     process = git-lfs filter-process
