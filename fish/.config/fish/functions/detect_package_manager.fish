@@ -2,8 +2,8 @@ function detect_package_manager --description "Detect the appropriate package ma
     set distro (detect_distro)
     switch $distro
         case 'arch'
-            if type -q aurman
-                set managers 'aurman'
+            if type -q 'yay'
+                set manager "yay"
                 set do_sudo false
             else
                 set managers 'pacman'
