@@ -27,3 +27,7 @@ if type -q ruby
     set -gx PATH "$gem_user_dir/bin" $PATH
     set -gx GEM_HOME $gem_user_dir
 end
+
+if type -q yarn
+    set -gx PATH (yarn global bin) $PATH
+end
