@@ -15,10 +15,8 @@
 
 [alias]
     a = add
-    ap = add -p
 
     c = commit
-    ce = commit --edit
 
     co = checkout
 
@@ -26,7 +24,6 @@
     pl = pull --rebase
 
     r = rebase
-    ri = rebase --interactive
 
     s = status
 
