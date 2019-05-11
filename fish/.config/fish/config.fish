@@ -1,10 +1,17 @@
 #
+# fisher package manager
+#
+if not functions -q fisher
+    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+    fish -c fisher
+end
+
+#
 # aliases & abbreviations
 #
 
 alias la "ls -a"
-
-abbr --add p (detect_package_manager)
 
 abbr --add g git
 
@@ -18,9 +25,7 @@ set -gx VISUAL "code --wait"
 
 set -gx PATH "$HOME/.local/bin" $PATH
 
-if type -q cargo
-    set -gx PATH "$HOME/.cargo/bin" $PATH
-end
+set -gx PATH "$HOME/.cargo/bin" $PATH
 
 if type -q ruby
     set gem_user_dir (ruby -e 'print Gem.user_dir')
