@@ -1,6 +1,6 @@
 Hi there. This is my dotfiles repo. Feel free to nose around and copy stuff, or if you know an awesome plugin or configuration trick, send me a PR.
 
-# Wut? Qu'est que c'est? Dotfiles?
+# What's a "dotfile"?
 On Linux and other Unix-like operating systems, most programs store user-specific configuration in a file or directory with a name prefixed by a dot (e.g. `.zshrc` or `.bashrc`) inside the user's home directory. Hence the name dotfiles. Dotfiles make reusing settings across systems quite easy, because they go in the same directory on many different systems. Because of this portability of dotfiles, most power users keep them easily acessible in a special Git repository, like this one. :)
 
 # How to use
