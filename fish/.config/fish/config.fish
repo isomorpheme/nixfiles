@@ -42,4 +42,9 @@ end
 # prompt
 #
 
-set SPACEFISH_CHAR_SYMBOL '⊣'
+if type -q starship
+    starship init fish | source
+else
+    echo "Starship executable not found! Falling back to default prompt." > /dev/stderr
+end
+
