@@ -1,9 +1,6 @@
-vim/.vim/bundle
-vim/.vim/swap
-
-vim-minimal/.vim/autoload
-vim-minimal/.vim/plugged
-vim-minimal/.vim/.netrwhist
+vim/.vim/autoload
+vim/.vim/plugged
+vim/.vim/.netrwhist
 
 neovim/.config/nvim/bundle
 neovim/.config/nvim/swap

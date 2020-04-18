@@ -1,4 +1,4 @@
-setlocal tabstop=2
-setlocal shiftwidth=2
-setlocal softtabstop=2
-setlocal commentstring=<!--\ %s\ -->
+set tabstop=2
+set softtabstop=0
+set expandtab
+set shiftwidth=2
