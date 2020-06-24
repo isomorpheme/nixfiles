@@ -38,7 +38,7 @@ if type -q yarn
     set -gx PATH (yarn global bin) $PATH
 end
 
-if grep -q Microsoft /proc/version then
+if grep -q Microsoft /proc/version
     set -gx DISPLAY '127.0.0.1:0.0'
 end
 
