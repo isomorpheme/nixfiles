@@ -2,10 +2,6 @@
     name = Daan Rijks
     email = daanrijks@pm.me
 
-[core]
-    autocrlf = input
-    safecrlf = warn
-
 [credential]
     helper = cache --timeout=1800
 
@@ -16,28 +12,16 @@
     a = add
     c = commit
     co = checkout
+    sw = switch
     ps = push
-    pl = pull --rebase
-    r = rebase
+    pl = pull
     s = status
 
-    pull-sub = !git pull --recurse-submodules && git submodule update --recursive
-
-[push]
-    default = simple
+[pull]
+    rebase = true
 
 [diff]
     algorithm = histogram
 
 [rebase]
     autosquash = true
-
-[tig]
-    main-view-author = abbreviated
-    main-view-date = relative-compact
-
-[filter "lfs"]
-    process = git-lfs filter-process
-    required = true
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
