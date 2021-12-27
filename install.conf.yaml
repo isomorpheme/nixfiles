@@ -1,0 +1,31 @@
+- defaults:
+    link:
+      relink: true
+
+- clean:
+  - '~'
+
+- create:
+  - ~/.local/bin
+
+# git
+- link:
+    ~/.gitconfig: git/.gitconfig
+
+# fish shell
+- link:
+    ~/.config/fish: fish/.config/fish
+    ~/.config/starship.toml: starship/.config/starship.toml
+- shell:
+  - [
+      sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --bin-dir ~/.local/bin --yes,
+      "installing starship",
+    ]
+
+# vim
+- link:
+    ~/.vimrc: vim/.vimrc
+    ~/.vim: vim/.vim
+
+- shell:
+  - [git submodule update --init --recursive, "installing submodules"]
