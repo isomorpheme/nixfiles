@@ -14,7 +14,10 @@ set -gx EDITOR "vim"
 set -gx GIT_EDITOR $EDITOR
 set -gx VISUAL "code --wait"
 
+# make ~/.local act like an extension to /usr/local
 set -gx PATH "$HOME/.local/bin" $PATH
+set -gx LIBRARY_PATH "$HOME/.local/lib" $LIBRARY_PATH
+set -gx LD_LIBRARY_PATH "$HOME/.local/lib" $LD_LIBRARY_PATH
 
 set -gx PATH "$HOME/.cargo/bin" $PATH
 
