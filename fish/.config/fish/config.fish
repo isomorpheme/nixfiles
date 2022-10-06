@@ -11,7 +11,6 @@ abbr --add g git
 #
 
 set -gx EDITOR "vim"
-set -gx GIT_EDITOR $EDITOR
 set -gx VISUAL "code --wait"
 
 # make ~/.local act like an extension to /usr/local
