@@ -46,7 +46,7 @@ end
 if type -q starship
     starship init fish | source
 else
-    echo "Starship executable not found! Falling back to default prompt." > /dev/stderr
+    echo "Starship executable not found! Falling back to default prompt." >&2
 end
 
 #
