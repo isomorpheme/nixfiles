@@ -8,10 +8,6 @@
 - create:
   - ~/.local/bin
 
-# git
-- link:
-    ~/.gitconfig: git/.gitconfig
-
 # fish shell
 - link:
     ~/.config/fish: fish/.config/fish
