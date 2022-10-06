@@ -18,6 +18,8 @@
     pl = pull
     s = status
 
+    m = machete
+
 [pull]
     rebase = true
 
