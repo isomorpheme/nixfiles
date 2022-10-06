@@ -52,23 +52,3 @@ end
 #
 # syntax highlighting
 #
-
-# These are basically the same colours as the default, but instead use generic
-# terminal colours of hardcoded RGB (which can look terrible when your terminal
-# theme doesn't match - why is it even the default???).
-set fish_color_autosuggestion brblack
-set fish_color_command blue
-set fish_color_comment brblack
-set fish_color_end green
-set fish_color_error red
-set fish_color_match --background=brblue
-set fish_color_normal normal
-set fish_color_param cyan
-set fish_color_quote yellow
-set fish_color_redirection magenta
-set fish_color_operator magenta
-set fish_color_escape green
-set fish_pager_color_completion normal
-set fish_pager_color_description yellow
-set fish_pager_color_prefix blue --underline --bold
-set fish_pager_color_progress brwhite --background=blue
