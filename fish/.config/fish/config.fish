@@ -34,6 +34,11 @@ if grep -q Microsoft /proc/version
     set -gx DISPLAY '127.0.0.1:0.0'
 end
 
+if set -q GHCUP_INSTALL_BASE_PREFIX[1]
+    set GHCUP_INSTALL_BASE_PREFIX $HOME
+    set -gx PATH $HOME/.cabal/bin $PATH /home/daan/.ghcup/bin # ghcup-env
+end
+
 #
 # prompt
 #
