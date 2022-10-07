@@ -27,6 +27,8 @@
       ps = "push";
       pl = "pull";
       s = "status";
+
+      m = "machete";
     };
 
     includes = [
