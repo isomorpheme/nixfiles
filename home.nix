@@ -7,6 +7,7 @@
 
   home.packages = [
     pkgs.git-machete
+    pkgs.git-revise
   ];
 
   programs.home-manager = {
@@ -29,6 +30,7 @@
       s = "status";
 
       m = "machete";
+      r = "revise";
     };
 
     includes = [
