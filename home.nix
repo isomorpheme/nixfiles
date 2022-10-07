@@ -117,4 +117,13 @@
       let g:airline_theme='minimalist'
     '';
   };
+
+  # bat #
+
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "ansi";
+    };
+  };
 }
