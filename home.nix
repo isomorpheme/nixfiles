@@ -10,6 +10,17 @@
     pkgs.git-revise
   ];
 
+  home.sessionVariables = {
+    EDITOR = "vim";
+    VISUAL = "code --wait";
+
+    # Make ~/.local act like an extension to /usr/local.
+    # FUTURE: This will get unnecessary as I nixify more stuff.
+    PATH = "$HOME/.local/bin:$PATH";
+    LIBRARY_PATH = "$HOME/.local/lib:$LIBRARY_PATH";
+    LD_LIBRARY_PATH = "$HOME/.local/lib:$LD_LIBRARY_PATH";
+  };
+
   programs.home-manager = {
     enable = true;
   };
@@ -65,5 +76,23 @@
 
   programs.gh = {
     enable = true;
+  };
+
+  programs.fish = {
+    enable = true;
+
+    shellAliases = {
+      la = "ls -a";
+    };
+
+    shellAbbrs = {
+      g = "git";
+      hm = "home-manager";
+    };
+  };
+
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
   };
 }

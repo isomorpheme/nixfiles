@@ -8,16 +8,6 @@
 - create:
   - ~/.local/bin
 
-# fish shell
-- link:
-    ~/.config/fish: fish/.config/fish
-    ~/.config/starship.toml: starship/.config/starship.toml
-- shell:
-  - [
-      sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --bin-dir ~/.local/bin --yes,
-      "installing starship",
-    ]
-
 # vim
 - link:
     ~/.vimrc: vim/.vimrc
