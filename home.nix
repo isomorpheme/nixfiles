@@ -25,6 +25,8 @@
     enable = true;
   };
 
+  # git #
+
   programs.git = {
     enable = true;
 
@@ -77,6 +79,8 @@
   programs.gh = {
     enable = true;
   };
+
+  # fish #
 
   programs.fish = {
     enable = true;
