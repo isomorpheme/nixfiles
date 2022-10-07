@@ -5,9 +5,6 @@
 - clean:
   - '~'
 
-- create:
-  - ~/.local/bin
-
 # vim
 - link:
     ~/.vimrc: vim/.vimrc
