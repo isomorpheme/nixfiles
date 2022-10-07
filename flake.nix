@@ -12,7 +12,8 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
+    in
+    {
       homeConfigurations.daan = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
@@ -23,5 +24,7 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };
+
+      formatter.${system} = pkgs.nixpkgs-fmt;
     };
 }
