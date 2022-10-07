@@ -6,8 +6,10 @@
   home.stateVersion = "22.05";
 
   home.packages = [
+    pkgs.fd
     pkgs.git-machete
     pkgs.git-revise
+    pkgs.ripgrep
   ];
 
   home.sessionVariables = {
