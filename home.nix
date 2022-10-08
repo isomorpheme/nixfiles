@@ -84,10 +84,6 @@
   programs.fish = {
     enable = true;
 
-    shellAliases = {
-      la = "ls -a";
-    };
-
     shellAbbrs = {
       g = "git";
       hm = "home-manager";
@@ -132,5 +128,12 @@
     config = {
       theme = "ansi";
     };
+  };
+
+  # exa #
+
+  programs.exa = {
+    enable = true;
+    enableAliases = true;
   };
 }
