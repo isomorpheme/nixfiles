@@ -17,10 +17,15 @@
 
     # Make ~/.local act like an extension to /usr/local.
     # FUTURE: This will get unnecessary as I nixify more stuff.
-    PATH = "$HOME/.local/bin:$PATH";
     LIBRARY_PATH = "$HOME/.local/lib:$LIBRARY_PATH";
     LD_LIBRARY_PATH = "$HOME/.local/lib:$LD_LIBRARY_PATH";
   };
+
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    # HACK: This is only because the ghcup package is broken.
+    "$HOME/.ghcup/bin"
+  ];
 
   programs.home-manager = {
     enable = true;
