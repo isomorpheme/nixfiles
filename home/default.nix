@@ -1,19 +1,16 @@
 { pkgs, ... }:
 {
   imports = [
-    ./git.nix
     ./fish.nix
-    ./vim.nix
+    ./git.nix
+    ./haskell.nix
     ./utils.nix
+    ./vim.nix
   ];
 
   home.username = "daan";
   home.homeDirectory = "/home/daan";
   home.stateVersion = "22.05";
-
-  home.packages = [
-    pkgs.stack
-  ];
 
   home.sessionVariables = {
     EDITOR = "vim";
