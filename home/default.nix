@@ -23,9 +23,8 @@
   };
 
   home.sessionPath = [
+    # TODO: Do I still need this?
     "$HOME/.local/bin"
-    # HACK: This is only because the ghcup package is broken.
-    "$HOME/.ghcup/bin"
   ];
 
   programs.home-manager = {
