@@ -22,11 +22,6 @@
     LD_LIBRARY_PATH = "$HOME/.local/lib:$LD_LIBRARY_PATH";
   };
 
-  home.sessionPath = [
-    # TODO: Do I still need this?
-    "$HOME/.local/bin"
-  ];
-
   programs.home-manager = {
     enable = true;
   };
