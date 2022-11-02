@@ -41,7 +41,13 @@
 
       rerere.enabled = true;
 
-      submodule.recurse = true;
+      fetch = {
+        recurseSubmodules = "on-demand";
+        # This will make it choose "some reasonable default".
+        parallel = 0;
+      };
+
+      push.recurseSubmodules = "on-demand";
     };
 
     lfs.enable = true;
