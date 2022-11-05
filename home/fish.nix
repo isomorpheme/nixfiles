@@ -6,6 +6,7 @@
     shellAbbrs = {
       g = "git";
       hm = "home-manager";
+      nr = "nixos-rebuild";
     };
 
     plugins = [
