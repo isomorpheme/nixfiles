@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ pkgs, me, ... }:
 
 {
   imports =
@@ -84,7 +84,7 @@
   # services.xserver.libinput.touchpad.clickMethod = "buttonareas";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.daan = {
+  users.users.${me.username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;

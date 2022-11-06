@@ -11,13 +11,16 @@
   outputs = inputs@{ nixpkgs, nixpkgs-unstable, home-manager, ... }:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.lega3yPackages.${system};
+      pkgs = nixpkgs.legacyPackages.${system};
+      me.username = "daan";
     in
     {
       nixosConfigurations.Ada = nixpkgs.lib.nixosSystem {
         inherit system;
 
         modules = [ ./hosts/Ada/configuration.nix ];
+
+        specialArgs = { inherit me; };
       };
 
       homeConfigurations.daan = home-manager.lib.homeManagerConfiguration {
@@ -26,6 +29,7 @@
         modules = [ ./home ];
 
         extraSpecialArgs = {
+          inherit me;
           flake-inputs = inputs;
         };
       };
