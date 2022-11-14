@@ -41,6 +41,8 @@
 
       rerere.enabled = true;
 
+      submodule.recurse = true;
+
       fetch = {
         recurseSubmodules = "on-demand";
         # This will make it choose "some reasonable default".
