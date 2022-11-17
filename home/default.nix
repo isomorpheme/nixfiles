@@ -4,6 +4,7 @@
     ./fish.nix
     ./git.nix
     ./haskell.nix
+    ./rust.nix
     ./utils.nix
     ./vim.nix
   ];
