@@ -8,7 +8,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -18,6 +18,10 @@
         inherit pkgs;
 
         modules = [ ./home ];
+
+        extraSpecialArgs = {
+          flake-inputs = inputs;
+        };
       };
 
       formatter.${system} = pkgs.nixpkgs-fmt;
