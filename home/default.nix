@@ -11,7 +11,7 @@
 
   home.username = "daan";
   home.homeDirectory = "/home/daan";
-  home.stateVersion = "22.05";
+  home.stateVersion = "22.11";
 
   nix.registry = {
     # Add a flake registry entry pointing to the nixpkgs pinned in `flake.lock`,
