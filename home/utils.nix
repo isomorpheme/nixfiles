@@ -16,4 +16,8 @@
     enable = true;
     enableAliases = true;
   };
+
+  programs.jq = {
+    enable = true;
+  };
 }
