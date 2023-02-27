@@ -3,6 +3,7 @@
   home.packages = [
     pkgs.fd
     pkgs.ripgrep
+    pkgs.yq
   ];
 
   programs.direnv = {
