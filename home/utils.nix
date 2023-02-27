@@ -5,6 +5,11 @@
     pkgs.ripgrep
   ];
 
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
   programs.bat = {
     enable = true;
     config = {
