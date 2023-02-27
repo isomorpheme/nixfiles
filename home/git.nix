@@ -49,7 +49,10 @@
         parallel = 0;
       };
 
-      push.recurseSubmodules = "on-demand";
+      push = {
+        recurseSubmodules = "on-demand";
+        autoSetupRemote = true;
+      };
     };
 
     lfs.enable = true;
