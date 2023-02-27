@@ -29,6 +29,10 @@
     VISUAL = "code --wait";
   };
 
+  home.packages = [
+    pkgs.cachix
+  ];
+
   programs.home-manager = {
     enable = true;
   };
