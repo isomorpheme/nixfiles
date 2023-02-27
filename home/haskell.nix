@@ -1,5 +1,14 @@
 { pkgs, ... }:
 {
+  imports = [
+    # TODO: Can we auto-import everything under `modules/` somehow?
+    ../modules/programs/ghcup.nix
+  ];
+
+  iso.programs.ghcup = {
+    enable = true;
+  };
+
   home.packages = [
     pkgs.stack
   ];
