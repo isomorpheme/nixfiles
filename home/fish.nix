@@ -15,8 +15,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "franciscolourenco";
           repo = "done";
-          rev = "d6abb267bb3fb7e987a9352bc43dcdb67bac9f06";
-          sha256 = "6oeyN9ngXWvps1c5QAUjlyPDQwRWAoxBiVTNmZ4sG8E=";
+          rev = "1.17.0";
+          sha256 = "H+PVoZZ0JdGPcQBib600dzaymlU6rPCSEi8VZXyi/Xc=";
         };
       }
     ];
