@@ -53,6 +53,8 @@
         recurseSubmodules = "on-demand";
         autoSetupRemote = true;
       };
+
+      rebase.autostash = true;
     };
 
     lfs.enable = true;
