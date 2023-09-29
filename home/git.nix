@@ -54,7 +54,10 @@
         autoSetupRemote = true;
       };
 
-      rebase.autostash = true;
+      rebase = {
+        missingCommitsCheck = "warn";
+        autoStash = true;
+      };
     };
 
     lfs.enable = true;
