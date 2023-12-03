@@ -2,7 +2,7 @@
 {
   imports = [
     # TODO: Can we auto-import everything under `modules/` somehow?
-    ../modules/programs/ghcup.nix
+    ../../modules/programs/ghcup.nix
   ];
 
   iso.programs.ghcup = {
