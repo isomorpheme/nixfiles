@@ -6,5 +6,6 @@
 
   home.packages = [
     pkgs.rustup
+    pkgs.elan
   ];
 }
