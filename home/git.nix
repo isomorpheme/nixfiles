@@ -10,13 +10,11 @@
       a = "add";
       c = "commit";
       co = "checkout";
-      sw = "switch";
       ps = "push";
       pl = "pull";
       s = "status";
 
-      m = "machete";
-      r = "revise";
+      brl = "branchless";
     };
 
     includes = [{
@@ -68,7 +66,11 @@
   };
 
   home.packages = [
-    pkgs.git-machete
-    pkgs.git-revise
+    pkgs.git-absorb
+    pkgs.git-branchless
   ];
+
+  home.shellAliases = {
+    git = "git-branchless wrap --";
+  };
 }
