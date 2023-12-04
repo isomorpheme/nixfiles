@@ -54,6 +54,7 @@
 
       rebase = {
         missingCommitsCheck = "warn";
+        autoSquash = true;
         autoStash = true;
       };
     };
