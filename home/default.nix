@@ -33,7 +33,11 @@
   };
 
   home.packages = [
+    # Dev-related, but helps with Nix stuff in general so it goes here.
     pkgs.cachix
+    pkgs.nixd
+
+    # Fonts
     pkgs.jetbrains-mono
   ];
 
