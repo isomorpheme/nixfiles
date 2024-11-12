@@ -29,7 +29,7 @@
 
   home.sessionVariables = {
     EDITOR = "vim";
-    VISUAL = "code --wait";
+    VISUAL = "zed --wait";
   };
 
   home.packages = [
