@@ -34,7 +34,12 @@
 
   home.packages = [
     pkgs.cachix
+    pkgs.jetbrains-mono
   ];
+
+  fonts.fontconfig = {
+    enable = true;
+  };
 
   programs.home-manager = {
     enable = true;
