@@ -33,6 +33,10 @@
         };
       };
 
+      packages.${system} = {
+        bootstrap = pkgs.callPackage ./bootstrap.nix { inherit home-manager; };
+      };
+
       formatter.${system} = pkgs.nixpkgs-fmt;
     };
 }
