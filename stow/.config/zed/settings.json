@@ -1,0 +1,38 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Catppuccin Macchiato - No Italics"
+  },
+  "vim_mode": true,
+  "vertical_scroll_margin": 8,
+  "terminal": {
+    "dock": "right"
+  },
+  "autosave": "on_focus_change",
+  "buffer_font_family": "JetBrains Mono",
+  "auto_install_extensions": {
+    "nix": true,
+    "catppuccin": true,
+    "git-firefly": true
+  },
+  "languages": {
+    "Haskell": {
+      "tab_size": 2,
+      "format_on_save": "off"
+    },
+    "Nix": {
+      "tab_size": 2
+    }
+  }
+}
