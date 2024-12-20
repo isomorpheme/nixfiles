@@ -20,19 +20,32 @@
     "dock": "right"
   },
   "autosave": "on_focus_change",
+  "format_on_save": "off",
   "buffer_font_family": "JetBrains Mono",
   "auto_install_extensions": {
     "nix": true,
     "catppuccin": true,
     "git-firefly": true
   },
+  "lsp": {
+    "hls": {
+      "initialization_options": {
+        "plugin": { "rename": { "crossModule": true } }
+      }
+    }
+  },
   "languages": {
     "Haskell": {
-      "tab_size": 2,
-      "format_on_save": "off"
+      "tab_size": 2
     },
     "Nix": {
       "tab_size": 2
+    },
+    "Python": {
+      "language_servers": ["!pylsp", "..."]
+    },
+    "Rust": {
+      "format_on_save": "on"
     }
   }
 }
