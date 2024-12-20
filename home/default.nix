@@ -36,6 +36,7 @@
     # Dev-related, but helps with Nix stuff in general so it goes here.
     pkgs.cachix
     pkgs.nixd
+    pkgs.nil
 
     # Fonts
     pkgs.jetbrains-mono
