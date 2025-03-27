@@ -59,15 +59,12 @@
         autoupdate = true;
       };
 
-      submodule.recurse = true;
-
       fetch = {
         all = true;
         # This will make it choose "some reasonable default".
         parallel = 0;
         prune = true;
         pruneTags = true;
-        recurseSubmodules = "on-demand";
       };
 
       pull = {
@@ -75,7 +72,6 @@
       };
 
       push = {
-        recurseSubmodules = "on-demand";
         autoSetupRemote = true;
         followTags = true;
       };
