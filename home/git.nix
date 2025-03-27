@@ -27,35 +27,57 @@
 
     extraConfig = {
       color.ui = true;
+      column.ui = "auto";
+
+      branch.sort = "committerdate";
+      tag.sort = "version:refname";
 
       diff = {
         algorithm = "histogram";
         colorMoved = true;
+        mnemonicPrefix = true;
+        renames = true;
       };
 
-      pull.rebase = true;
+      commit = {
+        verbose = true;
+      };
 
-      merge.conflictstyle = "diff3";
+      merge = {
+        conflictstyle = "zdiff3";
+      };
 
-      rerere.enabled = true;
+      rebase = {
+        autoSquash = true;
+        autoStash = true;
+        missingCommitsCheck = "warn";
+        updateRefs = true;
+      };
+
+      rerere = {
+        enabled = true;
+        autoupdate = true;
+      };
 
       submodule.recurse = true;
 
       fetch = {
-        recurseSubmodules = "on-demand";
+        all = true;
         # This will make it choose "some reasonable default".
         parallel = 0;
+        prune = true;
+        pruneTags = true;
+        recurseSubmodules = "on-demand";
+      };
+
+      pull = {
+        rebase = true;
       };
 
       push = {
         recurseSubmodules = "on-demand";
         autoSetupRemote = true;
-      };
-
-      rebase = {
-        missingCommitsCheck = "warn";
-        autoSquash = true;
-        autoStash = true;
+        followTags = true;
       };
     };
 
