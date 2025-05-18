@@ -14,14 +14,6 @@
       me.username = "daan";
     in
     {
-      nixosConfigurations.Ada = nixpkgs.lib.nixosSystem {
-        inherit system;
-
-        modules = [ ./hosts/Ada/configuration.nix ];
-
-        specialArgs = { inherit me; };
-      };
-
       homeConfigurations.daan = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
