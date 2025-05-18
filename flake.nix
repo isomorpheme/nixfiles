@@ -12,22 +12,13 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      me.username = "isomorpheme";
     in
     {
       nixosConfigurations =
         import ./nixosConfigurations { nixpkgs = nixpkgs-nixos; };
 
-      homeConfigurations.isomorpheme = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        modules = [ ./home ];
-
-        extraSpecialArgs = {
-          inherit me;
-          flake-inputs = inputs;
-        };
-      };
+      homeConfigurations =
+        import ./homeConfigurations inputs;
 
       packages.${system} = {
         bootstrap = pkgs.callPackage ./bootstrap.nix { home-manager = home-manager.packages.${system}.default; };
