@@ -1,20 +1,24 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs-nixos.url = "github:nixos/nixpkgs/nixos-24.11";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, nixpkgs-nixos, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      me.username = "daan";
+      me.username = "isomorpheme";
     in
     {
-      homeConfigurations.daan = home-manager.lib.homeManagerConfiguration {
+      nixosConfigurations =
+        import ./nixosConfigurations { nixpkgs = nixpkgs-nixos; };
+
+      homeConfigurations.isomorpheme = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         modules = [ ./home ];
@@ -26,7 +30,7 @@
       };
 
       packages.${system} = {
-        bootstrap = pkgs.callPackage ./bootstrap.nix { inherit home-manager; };
+        bootstrap = pkgs.callPackage ./bootstrap.nix { home-manager = home-manager.packages.${system}.default; };
       };
 
       formatter.${system} = pkgs.nixpkgs-fmt;

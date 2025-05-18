@@ -38,6 +38,8 @@
     pkgs.nixd
     pkgs.nil
 
+    pkgs.zed-editor
+
     # Fonts
     pkgs.jetbrains-mono
   ];
