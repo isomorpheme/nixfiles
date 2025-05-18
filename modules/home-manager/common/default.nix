@@ -1,4 +1,4 @@
-{ pkgs, me, flake-inputs, ... }:
+{ pkgs, flake-inputs, ... }:
 {
   imports = [
     ./dev
@@ -7,10 +7,6 @@
     ./utils.nix
     ./vim.nix
   ];
-
-  home.username = me.username;
-  home.homeDirectory = "/home/${me.username}";
-  home.stateVersion = "22.05";
 
   nix.registry = {
     # Add a flake registry entry pointing to the nixpkgs pinned in `flake.lock`,

@@ -13,7 +13,7 @@ in
     home.packages = [
       # TODO: Avoid that awful relative path.
       # Or maybe don't `callPackage` here at all, add it in an overlay?
-      (pkgs.callPackage ../../packages/ghcup-bin.nix { })
+      (pkgs.callPackage ../../../packages/ghcup-bin.nix { })
     ];
 
     home.sessionPath = [
