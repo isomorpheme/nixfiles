@@ -1,4 +1,4 @@
-inputs@{ nixpkgs, home-manager, ... }:
+{ self, nixpkgs, home-manager, ... }:
   let
     inherit (nixpkgs) lib;
   in
@@ -24,7 +24,7 @@ inputs@{ nixpkgs, home-manager, ... }:
                     # to `modules` here (and make them more configurable if
                     # necessary).
                     myModulesPath = ../modules/home-manager;
-                    flake-inputs = inputs;
+                    flake = self;
                   };
                 };
             }

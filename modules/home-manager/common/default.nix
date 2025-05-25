@@ -1,4 +1,4 @@
-{ pkgs, flake-inputs, ... }:
+{ pkgs, flake, ... }:
 {
   imports = [
     ./dev
@@ -15,7 +15,7 @@
     # used by home-manager.
     nixpkgs = {
       from = { id = "nixpkgs"; type = "indirect"; };
-      flake = flake-inputs.nixpkgs;
+      flake = flake.inputs.nixpkgs;
     };
   };
 
