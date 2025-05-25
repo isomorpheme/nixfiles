@@ -17,14 +17,6 @@
       brl = "branchless";
     };
 
-    includes = [{
-      # TODO: Would be nice to pull this into the repository as well; but
-      # ideally, I'd like a setup where I can put a `.gitconfig` somewhere and
-      # all the repos "below" it will load that config.
-      path = "~/code/_chordify/.gitconfig";
-      condition = "gitdir:~/code/_chordify/";
-    }];
-
     extraConfig = {
       color.ui = true;
       column.ui = "auto";
