@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -92,7 +93,7 @@
     description = "isomorpheme";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -103,7 +104,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nix.settings = {
-    extra-experimental-features = ["nix-command" "flakes"];
+    extra-experimental-features = [ "nix-command" "flakes" ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -123,7 +124,7 @@
 
   programs.steam = {
     enable = true;
-    extraPackages = [pkgs.ncurses6];
+    extraPackages = [ pkgs.ncurses6 ];
   };
 
   # List services that you want to enable:
