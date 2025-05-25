@@ -6,17 +6,6 @@
     userName = "Daan Rijks";
     userEmail = "daanrijks@pm.me";
 
-    aliases = {
-      a = "add";
-      c = "commit";
-      co = "checkout";
-      ps = "push";
-      pl = "pull";
-      s = "status";
-
-      brl = "branchless";
-    };
-
     extraConfig = {
       color.ui = true;
       column.ui = "auto";
@@ -83,5 +72,23 @@
 
   home.shellAliases = {
     git = "git-branchless wrap --";
+  };
+
+  programs.fish = {
+    shellAbbrs =
+      {
+        g = "git";
+      } // builtins.mapAttrs
+        (_: expansion: { command = "git"; inherit expansion; })
+        {
+          a = "add";
+          c = "commit";
+          co = "checkout";
+          ps = "push";
+          pl = "pull";
+          s = "status";
+
+          brl = "branchless";
+        };
   };
 }
