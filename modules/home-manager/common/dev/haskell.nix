@@ -1,13 +1,4 @@
-{ myModulesPath, ... }:
 {
-  imports = [
-    (myModulesPath + "/programs/ghcup.nix")
-  ];
-
-  iso.programs.ghcup = {
-    enable = true;
-  };
-
   # FUTURE: GHC 9.2 started looking in XDG_CONFIG_HOME, so put this there
   # instead... in the far future when I don't have to use older versions
   # anymore, hopefully.
