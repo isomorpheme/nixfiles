@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "fish-done": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1747320793,
+        "narHash": "sha256-WA6DBrPBuXRIloO05UBunTJ9N01d6tO1K1uqojjO0mo=",
+        "owner": "franciscolourenco",
+        "repo": "done",
+        "rev": "0bfe402753681f705a482694fcaf20c2bfc6deb7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "franciscolourenco",
+        "repo": "done",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -54,6 +70,7 @@
     },
     "root": {
       "inputs": {
+        "fish-done": "fish-done",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-nixos": "nixpkgs-nixos"

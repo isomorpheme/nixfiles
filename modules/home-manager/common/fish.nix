@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, flake, ... }:
 {
   programs.fish = {
     enable = true;
@@ -19,12 +19,7 @@
     plugins = [
       {
         name = "done";
-        src = pkgs.fetchFromGitHub {
-          owner = "franciscolourenco";
-          repo = "done";
-          rev = "1.17.0";
-          sha256 = "H+PVoZZ0JdGPcQBib600dzaymlU6rPCSEi8VZXyi/Xc=";
-        };
+        src = flake.inputs.fish-done;
       }
     ];
   };

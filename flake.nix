@@ -6,6 +6,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    fish-done = {
+      url = "github:franciscolourenco/done";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ nixpkgs, nixpkgs-nixos, home-manager, ... }:
