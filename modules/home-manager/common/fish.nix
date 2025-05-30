@@ -1,4 +1,4 @@
-{ pkgs, flake, ... }:
+{ flake, ... }:
 {
   programs.fish = {
     enable = true;
