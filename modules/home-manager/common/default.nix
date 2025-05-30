@@ -1,7 +1,7 @@
 { pkgs, flake, ... }:
 {
   imports = [
-    ./dev
+    ./dev.nix
     ./fish.nix
     ./git.nix
     ./utils.nix

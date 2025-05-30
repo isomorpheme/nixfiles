@@ -1,4 +1,10 @@
+{ pkgs, ... }:
 {
+  home.packages = [
+    pkgs.rustup
+    pkgs.elan
+  ];
+
   # FUTURE: GHC 9.2 started looking in XDG_CONFIG_HOME, so put this there
   # instead... in the far future when I don't have to use older versions
   # anymore, hopefully.
