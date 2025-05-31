@@ -9,7 +9,6 @@
 
   home.packages = [
     pkgs.fd
-    pkgs.httpie
     pkgs.ripgrep
     pkgs.yq
 
