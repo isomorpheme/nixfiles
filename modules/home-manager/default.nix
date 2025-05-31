@@ -12,8 +12,4 @@
   nixpkgs.config = {
     allowUnfree = true;
   };
-
-  home.sessionPath = [
-    "$HOME/.local/bin"
-  ];
 }
