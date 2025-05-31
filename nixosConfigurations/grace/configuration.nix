@@ -124,7 +124,6 @@
 
   programs.steam = {
     enable = true;
-    extraPackages = [ pkgs.ncurses6 ];
   };
 
   # List services that you want to enable:
