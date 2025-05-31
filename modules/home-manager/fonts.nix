@@ -1,11 +1,11 @@
 { pkgs, ... }:
 {
-    home.packages = [
-      # Fonts
-      pkgs.jetbrains-mono
-    ];
+  home.packages = [
+    # Fonts
+    pkgs.jetbrains-mono
+  ];
 
-    fonts.fontconfig = {
-      enable = true;
-    };
+  fonts.fontconfig = {
+    enable = true;
+  };
 }
