@@ -13,4 +13,8 @@
       let g:airline_theme='minimalist'
     '';
   };
+
+  home.sessionVariables = {
+    EDITOR = "vim";
+  };
 }

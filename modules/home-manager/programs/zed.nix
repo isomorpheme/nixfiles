@@ -9,4 +9,8 @@
       ".zed"
     ];
   };
+
+  home.sessionVariables = {
+    VISUAL = "zed --wait";
+  };
 }
