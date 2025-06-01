@@ -1,6 +1,6 @@
-{ nixpkgs }:
+{ self, nixpkgs-nixos, ... }:
 let
-  inherit (nixpkgs) lib;
+  inherit (nixpkgs-nixos) lib;
 in
 lib.concatMapAttrs
   (name: type:
@@ -10,7 +10,13 @@ lib.concatMapAttrs
     {
       ${name} =
         lib.nixosSystem {
-          modules = [ ./${name}/configuration.nix ];
+          modules = [
+            {
+              system.configurationRevision =
+                self.rev or self.dirtyRev or self.lastModified or null;
+            }
+            ./${name}/configuration.nix
+          ];
         };
     }
   )

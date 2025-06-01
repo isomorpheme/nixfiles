@@ -19,7 +19,7 @@
     in
     {
       nixosConfigurations =
-        import ./nixosConfigurations { nixpkgs = nixpkgs-nixos; };
+        import ./nixosConfigurations inputs;
 
       homeConfigurations =
         import ./homeConfigurations inputs;
