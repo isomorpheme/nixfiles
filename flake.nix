@@ -28,6 +28,13 @@
         bootstrap = pkgs.callPackage ./bootstrap.nix { home-manager = home-manager.packages.${system}.default; };
       };
 
+      templates = {
+        haskell = {
+          path = ./templates/haskell;
+          description = "Haskell";
+        };
+      };
+
       formatter.${system} = pkgs.nixpkgs-fmt;
     };
 }
