@@ -1,4 +1,4 @@
-{ self, nixpkgs-nixos, ... }:
+{ self, nixpkgs-nixos, nixarr, ... }:
 let
   inherit (nixpkgs-nixos) lib;
 in
@@ -11,6 +11,7 @@ lib.concatMapAttrs
       ${name} =
         lib.nixosSystem {
           modules = [
+            nixarr.nixosModules.default
             {
               system.configurationRevision =
                 self.rev or self.dirtyRev or self.lastModified or null;
