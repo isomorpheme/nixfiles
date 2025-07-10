@@ -35,6 +35,10 @@
     enable = true;
   };
 
+  programs.pgcli = {
+    enable = true;
+  };
+
   xdg.configFile."ghci.conf" = {
     target = "ghc/ghci.conf";
     text = ''
