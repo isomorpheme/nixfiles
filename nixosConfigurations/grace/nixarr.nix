@@ -25,4 +25,8 @@
       enable = true;
     };
   };
+
+  services.bitmagnet = {
+    enable = true;
+  };
 }
