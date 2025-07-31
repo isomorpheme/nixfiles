@@ -4,6 +4,10 @@
     pkgs.zed-editor
   ];
 
+  home.shellAliases = {
+    "zed" = "zeditor";
+  };
+
   programs.git = {
     ignores = [
       ".zed"
