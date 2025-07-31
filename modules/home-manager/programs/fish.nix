@@ -6,6 +6,7 @@
     shellAbbrs = {
       hm = "home-manager";
       nr = "nixos-rebuild";
+      snr = "sudo nixos-rebuild";
     };
 
     plugins = [
