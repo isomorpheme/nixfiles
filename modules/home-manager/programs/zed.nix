@@ -15,6 +15,6 @@
   };
 
   home.sessionVariables = {
-    VISUAL = "zed --wait";
+    VISUAL = "zeditor --wait";
   };
 }
