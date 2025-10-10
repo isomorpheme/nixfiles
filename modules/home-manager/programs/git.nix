@@ -32,7 +32,6 @@
         autoSquash = true;
         autoStash = true;
         missingCommitsCheck = "warn";
-        updateRefs = true;
       };
 
       rerere = {
