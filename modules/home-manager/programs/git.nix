@@ -3,10 +3,12 @@
   programs.git = {
     enable = true;
 
-    userName = "Daan Rijks";
-    userEmail = "daanrijks@pm.me";
+    settings = {
+      user = {
+        name = "Daan Rijks";
+        email = "daanrijks@pm.me";
+      };
 
-    extraConfig = {
       color.ui = true;
       column.ui = "auto";
 
