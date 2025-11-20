@@ -10,9 +10,6 @@
   home.packages = [
     pkgs.fd
     pkgs.ripgrep
-
-    pkgs.rustup
-    pkgs.elan
   ];
 
   programs.direnv = {
