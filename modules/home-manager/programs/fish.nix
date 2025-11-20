@@ -1,4 +1,4 @@
-{ flake, ... }:
+{ flake, config, ... }:
 {
   programs.fish = {
     enable = true;
@@ -15,6 +15,11 @@
         src = flake.inputs.fish-done;
       }
     ];
+
+    # https://github.com/nix-community/home-manager/issues/8178
+    interactiveShellInit = ''
+      set -p fish_complete_path ${config.programs.fish.package}/share/fish/completions
+    '';
   };
 
   programs.starship = {
