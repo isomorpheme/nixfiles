@@ -5,8 +5,8 @@
 
     settings = {
       user = {
-        name = "Daan Rijks";
-        email = "daanrijks@pm.me";
+        name = "isomorpheme";
+        email = "iso@morpheme.tech";
       };
 
       color.ui = true;
