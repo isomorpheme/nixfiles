@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixpkgs-nixos.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-nixos.url = "github:nixos/nixpkgs/nixos-25.11";
     nixarr.url = "github:rasmus-kirk/nixarr";
     home-manager = {
       url = "github:nix-community/home-manager";
