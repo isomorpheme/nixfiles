@@ -20,10 +20,10 @@
     in
     {
       nixosConfigurations =
-        import ./nixosConfigurations inputs;
+        import ./nixos/configurations inputs;
 
       homeConfigurations =
-        import ./homeConfigurations inputs;
+        import ./home/configurations inputs;
 
       packages.${system} = {
         bootstrap = pkgs.callPackage ./bootstrap.nix { home-manager = home-manager.packages.${system}.default; };

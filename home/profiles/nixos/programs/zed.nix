@@ -1,3 +1,4 @@
+# On NixOS, I use a Nix-packaged Zed (but still mutable config for Zed itself).
 { pkgs, ... }:
 {
   home.packages = [
@@ -6,12 +7,6 @@
 
   home.shellAliases = {
     "zed" = "zeditor";
-  };
-
-  programs.git = {
-    ignores = [
-      ".zed"
-    ];
   };
 
   home.sessionVariables = {

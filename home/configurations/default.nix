@@ -16,11 +16,10 @@ lib.concatMapAttrs
           # https://github.com/nix-community/home-manager/issues/4571
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           modules = [
-            ../modules/home-manager
             ./${name}/home.nix
           ];
           extraSpecialArgs = {
-            myModulesPath = ../modules/home-manager;
+            profilesPath = ../profiles;
             flake = self;
           };
         };
