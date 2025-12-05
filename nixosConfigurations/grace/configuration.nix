@@ -55,15 +55,6 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  # This is to work around crashes in Zed:
-  # https://github.com/zed-industries/zed/issues/28851
-  #
-  # (It adds amdvlk as an available driver, which automatically becomes the
-  # default one, because that's how AMD made it work.)
-  hardware.graphics.extraPackages = [
-    pkgs.amdvlk
-  ];
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
