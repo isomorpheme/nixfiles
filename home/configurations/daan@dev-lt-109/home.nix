@@ -1,4 +1,4 @@
-{ profilesPath, ... }:
+{ profilesPath, pkgs, ... }:
 {
   imports = [
     (profilesPath + /default)
@@ -10,6 +10,10 @@
 
   home.sessionPath = [
     "$HOME/.local/bin"
+  ];
+
+  home.packages = [
+    pkgs.pyrefly
   ];
 
   programs.git = {
