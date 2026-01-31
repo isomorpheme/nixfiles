@@ -11,6 +11,7 @@
 
     transmission = {
       enable = true;
+      flood.enable = true;
     };
 
     prowlarr = {
