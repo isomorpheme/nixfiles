@@ -12,6 +12,10 @@
     transmission = {
       enable = true;
       flood.enable = true;
+      extraSettings = {
+        "ratio_limit" = 2.0;
+        "ratio_limit_enabled" = true;
+      };
     };
 
     prowlarr = {
