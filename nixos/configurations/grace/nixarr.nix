@@ -15,6 +15,7 @@
       extraSettings = {
         "ratio_limit" = 2.0;
         "ratio_limit_enabled" = true;
+        "peer_port_random_on_start" = true;
       };
     };
 
