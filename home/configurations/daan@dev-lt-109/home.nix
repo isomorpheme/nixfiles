@@ -21,6 +21,7 @@
       {
         condition = "gitdir:~/channable/";
         contents = {
+          user.name = "Daan Rijks";
           user.email = "daan.rijks@channable.com";
         };
       }
